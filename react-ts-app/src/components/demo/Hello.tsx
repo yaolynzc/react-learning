@@ -1,17 +1,19 @@
-import React from 'react';
-import { Button } from 'antd';
+import React from "react";
+import { Button } from "antd";
 
 interface Greeting {
-    name: string;
-    firstName: string;
-    lastName: string;
+  name: string;
+  firstName: string;
+  lastName: string;
 }
 
-const Hello = (props: Greeting) => <Button type="primary">Hello {props.name}</Button>
+const Hello = (props: Greeting) => (
+  <Button type="primary">Hello {props.name}</Button>
+);
 
 Hello.defaultProps = {
-    firstName: '',
-    lastName: ''
-}
+  firstName: "",
+  lastName: "",
+};
 
 export default Hello;

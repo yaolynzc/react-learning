@@ -1,16 +1,13 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
+import React from "react";
+import ReactDOM from "react-dom";
+// import Hello from "./components/demo/Hello";
+import HelloClass from "./components/demo/HelloClass";
 
-import './index.css';
-// import App from './App';
-import Hello from './components/demo/Hello';
+const propTemp = { name: "fame", firstName: "l", lastName: "a" };
 
-const root = ReactDOM.createRoot(
-  document.getElementById('root') as HTMLElement
-);
-const propTemp = {name: 'fame', firstName: 'l', lastName:'a'}
-root.render(
+ReactDOM.render(
   <React.StrictMode>
-    <Hello  {...propTemp}/>
-  </React.StrictMode>
+    <HelloClass {...propTemp} />
+  </React.StrictMode>,
+  document.getElementById("root") as HTMLElement
 );
