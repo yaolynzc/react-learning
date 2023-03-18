@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript createElement</title>
+</head>
+<body>
+    <div id="id-div-react"></div>
+    <script type="text/JavaScript">
+        const divReact = document.getElementById('id-div-react')
+        const jsSpan = document.createElement('span')
+        const jsH3 = document.createElement('h3')
+        jsH3.innerText = "JavaScript DOM"
+
+        const jsP = document.createElement('p')
+        jsP.innerText = "Create dom by JavaScript's createElement() func.";
+        jsSpan.appendChild(jsH3);
+        jsSpan.appendChild(jsP);
+        divReact.appendChild(jsSpan);
+    </script>
+</body>
+</html>
