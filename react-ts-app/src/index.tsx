@@ -5,6 +5,8 @@ import ReactDOM from "react-dom";
 // import HelloHOC from "./components/demo/HelloHOC";
 // import HelloHooks from "./components/HelloHooks";
 import App from "./components/App";
+// mock数据
+import "./mock/index";
 
 // const propTemp = { name: "fame", firstName: "l", lastName: "a" };
 

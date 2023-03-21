@@ -1,14 +1,19 @@
 import React, { Component } from "react";
 import { Form, Input, Select, Button } from "antd";
+import { FormComponentProps } from 'antd/es/form';
 
-import { EmployeeRequest } from "../../interface/employee";
+import { EmployeeRequest,EmployeeResponse } from "../../interface/employee";
 
 import { get } from "../../utils/request";
 import { GET_EMPLOYEE_URL } from "../../constants/urls";
 
 const { Option } = Select;
 
-class QueryForm extends Component<{}, EmployeeRequest> {
+interface Props extends FormComponentProps {
+  onDataChange(data: EmployeeResponse): void
+}
+
+class QueryForm extends Component<Props, EmployeeRequest> {
   state: EmployeeRequest = {
     name: "",
     departmentId: undefined,
@@ -26,7 +31,9 @@ class QueryForm extends Component<{}, EmployeeRequest> {
 
   queryEmployee = (param: EmployeeRequest) => {
     console.log(param);
-    get(GET_EMPLOYEE_URL, param).then((response) => {});
+    get(GET_EMPLOYEE_URL, param).then((res) => {
+      props.onDataChange(res.data)
+    });
   };
 
   handleSubmit = () => {

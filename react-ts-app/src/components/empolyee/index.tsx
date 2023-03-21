@@ -6,15 +6,29 @@ import "./index.css";
 import QueryForm from "./QueryForm";
 
 import { employeeColums } from "./colums";
+import { EmployeeResponse } from '../../interface/employee';
 
-class Employee extends Component {
+interface State {
+    employee: EmployeeResponse
+}
+
+class Employee extends Component<{}, State> {
+  state: State = {
+    employee: undefined
+  }
+  setEmployee = (employee: EmployeeResponse) => {
+    this.setState({
+      employee,
+    });
+  };
+
   render() {
     return (
       <>
         <div className="toolbar">
-          <QueryForm></QueryForm>
+          <QueryForm onDataChange={this.setEmployee}></QueryForm>
         </div>
-        <Table columns={employeeColums} className="table"></Table>
+          <Table columns={employeeColums} dataSource={this.state.employee} className="table" />
       </>
     );
   }
