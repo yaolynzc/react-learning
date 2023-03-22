@@ -22,11 +22,20 @@ class Employee extends Component<{}, State> {
     });
   };
 
+  getTotal = () => {
+    let total:number = 0
+    if(typeof this.state.employee !== 'undefined') {
+      total = this.state.employee.length
+    }
+    return <p>共有{total}员工</p>
+  }
+
   render() {
     return (
       <>
         <div className="toolbar">
           <QueryForm onDataChange={this.setEmployee}></QueryForm>
+          {this.getTotal()}
         </div>
           <Table columns={employeeColums} dataSource={this.state.employee} className="table" />
       </>

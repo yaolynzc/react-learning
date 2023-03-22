@@ -8,6 +8,7 @@ const InitCount = 100;
 const genDataObject = () => {
     return {
         id: Random.guid(), // 唯一编号
+        key: Random.guid(),// key
         name: Random.cname(), // 姓名
         department: Random.csentence(4), // 部门
         hiredate: Random.now('day'), // 入职日期
