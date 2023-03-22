@@ -4,7 +4,9 @@ import ReactDOM from "react-dom";
 // import HelloClass from "./components/demo/HelloClass";
 // import HelloHOC from "./components/demo/HelloHOC";
 // import HelloHooks from "./components/HelloHooks";
-import App from "./components/App";
+// import App from "./components/App";
+import Root from "./routes";
+
 // mock数据
 import "./mock/index";
 
@@ -17,4 +19,4 @@ import "./mock/index";
 //   document.getElementById("root") as HTMLElement
 // );
 
-ReactDOM.render(<App />, document.getElementById("root"));
+ReactDOM.render(<Root />, document.getElementById("root"));
